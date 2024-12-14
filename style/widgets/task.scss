@@ -1,0 +1,70 @@
+* {
+    border: unset;
+}
+
+.taskWindow {
+    font-family: $font-name;
+
+    .taskBody {
+        color: black;
+        min-width: 400px;
+        min-height: 800px;
+
+        >* {
+            background-color: $bg;
+            border: 10px solid $border-color ;
+        }
+    }
+
+    .taskStack {
+        border-radius: 0px;
+
+        >* {
+            @include widget;
+            border: 3px solid $border-color;
+            border-radius: $radius*1.8;
+            margin: 8px
+        }
+    }
+
+    .taskEntry {
+        @include widget;
+        margin: 10px;
+        border: 3px solid $border-color;
+        border-radius: $radius*1.8;
+    }
+
+    .taskAdd,
+    .task {
+        @include accs-button;
+        color: black;
+        background-color: $primary-bg;
+        border-radius: $radius*1.8;
+        min-height: 35px;
+        min-width: 35px;
+
+        &:hover {
+            border-radius: $radius;
+        }
+    }
+
+    .taskAdd {
+        margin: 10px;
+    }
+
+    .taskComplete {
+        background-color: $primary-bg;
+        color: black;
+    }
+
+    .title {
+        color: $primary-bg;
+        background-color: $bg;
+        font-size: $font-size*1.4;
+        padding: 15px;
+    }
+
+    .taskBox {
+        min-width: 400px;
+    }
+}

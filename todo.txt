@@ -1,0 +1,12 @@
+add notif to dependensies lib utils
+// add temp and config global and delete them from options and style
+add dynamin configuration file to style
+app.config style
+there is a error with wifi emiterss
+ 
+i worked with file in {
+	option and lib/opsion
+	style
+	theme
+	task
+}
