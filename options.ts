@@ -128,13 +128,11 @@ const mkOptionsArg = {
             iconSize: opt(62),
             max: opt(6),
             favorites: opt([
-                [
-                    "firefox",
-                    "kitty",
-                    "org.gnome.Nautilus",
-                    "org.gnome.Calendar",
-                    "spotify",
-                ],
+                "firefox",
+                "kitty",
+                "org.gnome.Nautilus",
+                "org.gnome.Calendar",
+                "spotify",
             ]),
         },
     },

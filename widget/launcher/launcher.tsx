@@ -1,23 +1,30 @@
+import Apps from "gi://AstalApps"
 import PopupWindows from "../PopupWindows"
 import options from "../../options"
+import icon, { icons } from "../../icons/icons"
+import { App } from "astal/gtk3"
+
 export default () => {
     <PopupWindows name="launcher">
-        {Favorites()}
+        <Favorites />
     </PopupWindows>
 }
 
-function Favorites() {
+const AppItem = () => { }
+
+const Favorites = () => {
+    const apps = new Apps.Apps()
     const fav = options.launcher.apps.favorites
-    return <revealer
-        reveal_child={fav(f => f.length)}>
-        <box vertical>
-            {fav(fs => {
-                fs.map(f => {
-                    console.log(f)
-                })
-            })}
-            123
-            321
-        </box>
-    </revealer>
+
+    return <box>
+        {fav(fl => {
+            fl = fl.map(f => apps.fuzzy_query(f)[0]).filter(f => f)
+            return fl.map((app: Apps.Application) => <button
+                onClicked={() => { App.get_window("launcher")!.hide(); app.launch() }}>
+                <icon icon={icon(app.icon_name, icons.fallback.executable)} />
+            </button>
+            )
+        })
+        }
+    </box >
 }
