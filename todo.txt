@@ -1,3 +1,14 @@
+launcher		12/26
+launcher style		12/27
+countDown		12/28
+date			12/29
+power			12/30
+wifi			12/30
+workSpace		12/31
+valume			12/31
+notif			01/01
+wallpaper		01/02
+
 add notif to dependensies lib utils
 // add temp and config global and delete them from options and style
 add dynamin configuration file to style
