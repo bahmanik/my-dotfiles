@@ -41,7 +41,7 @@ export default () => {
 
     const fav = options.launcher.apps.favorites
     const Favorites = <revealer reveal_child={true}>
-        <box>{
+        <box class_name="quicklaunch horizontal">{
             fav(fl => {
                 fl = fl.map(f => apps.fuzzy_query(f)[0]).filter(f => f)
                 return fl.map((app: Apps.Application) => <button
@@ -55,7 +55,7 @@ export default () => {
     </revealer>
 
     return <PopupWindows name="launcher">
-        <box vertical>
+        <box vertical class_name="launcher">
             <Entry />
             {Favorites}
             {Applauncher}

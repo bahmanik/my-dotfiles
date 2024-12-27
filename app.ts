@@ -3,6 +3,7 @@ import Bar from "./widget/bar/Bar"
 import { taskMenu } from "./widget/taskMenu/taskmenu.tsx"
 import launcher from "./widget/launcher/launcher"
 import "./icons/icons"
+import "./lib/global"
 import { test } from "./widget/test"
 
 App.start({
