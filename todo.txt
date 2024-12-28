@@ -14,6 +14,7 @@ add notif to dependensies lib utils
 add dynamin configuration file to style
 app.config style
 there is a error with wifi emiterss
+ensure the directory exict for task and countdown
  
 i worked with file in {
 	option and lib/opsion

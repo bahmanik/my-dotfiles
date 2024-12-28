@@ -3,7 +3,7 @@ import icon, { icons } from "../../icons/icons"
 import PopupWindows from "../PopupWindows"
 import { monitorFile, readFileAsync, Variable, writeFileAsync } from "astal"
 
-export const taskMenu = async () => {
+export default async () => {
 
     const taskFile = `widget/taskMenu/task.json`
     const taskComFile = `widget/taskMenu/taskComplete.json`
