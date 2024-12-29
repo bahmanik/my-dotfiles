@@ -8,6 +8,7 @@ export default () => {
 
     function addCountDown(name: string, description: string, time: number, picture: string) {
         const uuid = "id" + Math.random().toString(16).slice(2)
+        console.log(picture.split("/"))
         const content = list.get()
         content[uuid] = { "name": name, "description": description, "time": time, "picture": picture }
         list.set("")
@@ -65,6 +66,7 @@ export default () => {
         }))}
         <FileChooser name="fileChooser" onFileActivated={(uri) => {
             Eloca.text = uri.get_filename()
+            console.log(uri.uri.get_filename().split("/"))
             Slides.shown = "form"
         }} />
         <Form name="form" />
