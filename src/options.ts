@@ -1406,6 +1406,30 @@ const options = mkOptions({
         restartCommand: opt('ags quit -i hyprpanel; ags run'),
     },
 
+    launcher: {
+        width: opt(0),
+        margin: opt(80),
+        nix: {
+            pkgs: opt("nixpkgs/nixos-unstable"),
+            max: opt(8),
+        },
+        sh: {
+            max: opt(16),
+        },
+        apps: {
+            iconSize: opt(62),
+            max: opt(6),
+            favorites: opt([
+                "firefox",
+                "kitty",
+                "org.gnome.Nautilus",
+                "org.gnome.Calendar",
+                "spotify",
+            ]),
+        },
+
+    },
+
     dummy: opt(true),
 });
 
