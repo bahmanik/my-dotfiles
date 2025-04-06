@@ -814,6 +814,7 @@ const options = mkOptions({
                                 background: opt(colors.pink),
                                 text: opt(secondary_colors.mantle),
                             },
+
                         },
                         directories: {
                             left: {
@@ -1407,6 +1408,7 @@ const options = mkOptions({
     },
 
     launcher: {
+        scaling: opt(100),
         width: opt(0),
         margin: opt(80),
         nix: {
@@ -1419,7 +1421,7 @@ const options = mkOptions({
         apps: {
             iconSize: opt(62),
             max: opt(6),
-            favorites: opt([
+            favorites: opt<string[]>([
                 "firefox",
                 "kitty",
                 "org.gnome.Nautilus",

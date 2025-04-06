@@ -1,1 +1,10 @@
-.launcher {}
+.launcher {
+    * {
+        font-size: $font-size * $launcher-scaling * 0.01;
+    }
+
+    background-color: rgba(0, 0, 0, 0.4);
+    @include floating_widget;
+
+    .appIcon {}
+}
