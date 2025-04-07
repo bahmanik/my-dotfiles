@@ -6,5 +6,24 @@
     background-color: rgba(0, 0, 0, 0.4);
     @include floating_widget;
 
-    .appIcon {}
+    .appIcon {
+        font-size: $launcher-icon;
+    }
+
+    separator {
+        &.horizontal {
+            background-color: red;
+
+            min-height: 10px;
+        }
+
+        &.vertical {
+            background-color: red;
+            min-width: 10px;
+        }
+    }
+
+    .favoritesIcon {
+        font-size: $launcher-favorites;
+    }
 }

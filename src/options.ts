@@ -96,6 +96,8 @@ const options = mkOptions({
             scaling: opt(100),
             background: opt(tertiary_colors.mantle),
             opacity: opt(100),
+            icon: opt('2.5rem'),
+            favorites: opt('3.0rem'),
         },
         tooltip: {
             scaling: opt(100),

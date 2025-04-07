@@ -5,29 +5,37 @@ import { icon } from "src/lib/utils"
 import { App } from "astal/gtk3"
 import AppLauncher from "./AppLauncher"
 import { bind, Variable } from 'astal';
+import { Gtk } from 'astal/gtk3';
+import Separator from '../shared/Separator';
 
 export default (): JSX.Element => {
 	const revealChild = Variable(true)
 	const apps = new Apps.Apps()
 	const Applauncher = AppLauncher()
 
-	const favoritesNames = options.launcher.apps.favorites
+	const favoritesNames = bind(options.launcher.apps.favorites)
 
 	const Favorites = () => (
-		<revealer reveal_child={bind(revealChild)}
-			child={
-				<box className="quicklaunch horizontal">{
-					favoritesNames(fl => {
+		<revealer hexpand halign={Gtk.Align.FILL} reveal_child={bind(revealChild)}>
+			<box vertical>
+				<Separator />
+				<box halign={Gtk.Align.FILL} hexpand>
+					{favoritesNames.as(fl => {
 						const favoriteApps = fl.map(f => apps.fuzzy_query(f)[0]).filter(f => f)
 						return favoriteApps.map((app: Apps.Application) => <button
-							onClicked={() => { App.get_window("launcher")!.hide(); app.launch() }}
-							child={<icon icon={icon(app.icon_name)} />}
-						>
+							halign={Gtk.Align.CENTER}
+							hexpand
+							onClicked={() => { App.get_window("launcher")!.hide(); app.launch() }}>
+							<box className="test" hexpand>
+								<icon className="favoritesIcon" icon={icon(app.icon_name)} />
+							</box>
 						</button>
 						)
 					})}
-				</box >}
-		/>)
+				</box >
+			</box>
+		</revealer >
+	)
 
 	const Entry = () => <entry
 		hexpand
@@ -59,7 +67,7 @@ export default (): JSX.Element => {
 	/>
 
 	return (
-		<PopupWindow name="launcher">
+		<PopupWindow layout="top" marginTop={100} name="launcher">
 			<box vertical className="launcher">
 				<Entry />
 				<Favorites />

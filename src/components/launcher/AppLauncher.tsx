@@ -2,6 +2,7 @@ import { App, Gtk } from "astal/gtk3"
 import { icon } from "src/lib/utils"
 import Apps from "gi://AstalApps"
 import { Variable } from "astal"
+import Separator from "../shared/Separator"
 
 
 
@@ -33,6 +34,7 @@ export default function AppLauncher() {
             vertical
             valign={Gtk.Align.CENTER}
         >
+            <Separator />
             <Title />
             <Description />
         </box>
