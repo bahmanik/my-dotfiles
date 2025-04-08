@@ -94,10 +94,26 @@ const options = mkOptions({
     theme: {
         launcher: {
             scaling: opt(100),
-            background: opt(tertiary_colors.mantle),
-            opacity: opt(100),
-            icon: opt('2.5rem'),
-            favorites: opt('3.0rem'),
+            bg_opacity: opt(0.4),
+            border_color: opt("red"),
+            border_width: opt("0.2em"),
+            border: {
+                location: opt<BorderLocation>('none'),
+                width: opt('0.15em'),
+                color: opt(colors.lavender),
+            },
+
+            shadow: opt(true),
+            //background: opt(tertiary_colors.mantle),
+            //opacity: opt(100),
+            icon: opt('2.5em'),
+            favorites: opt('3.0em'),
+            spacing: opt("0.6em"),
+            favorite: {
+                shadow: opt(true),
+                border: opt(true),
+                border_color: opt(colors.lavender)
+            }
         },
         tooltip: {
             scaling: opt(100),

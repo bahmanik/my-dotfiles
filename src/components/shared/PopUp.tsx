@@ -45,14 +45,14 @@ const Layout: LayoutFunction = (name: string, child: GtkWidget, transition: Gtk.
         </centerbox>
     ),
     top: () => (
-        <centerbox>
+        <centerbox >
             <Padding name={name} />
             <box vertical>
                 <PopupRevealer name={name} child={child} transition={transition} />
                 <Padding name={name} />
             </box>
             <Padding name={name} />
-        </centerbox>
+        </centerbox >
     ),
     'top-right': () => (
         <box>

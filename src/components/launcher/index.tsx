@@ -14,6 +14,10 @@ export default (): JSX.Element => {
 	const Applauncher = AppLauncher()
 
 	const favoritesNames = bind(options.launcher.apps.favorites)
+	const borderLocation = options.theme.launcher.border.location
+	const computeClassName = bind(borderLocation).as((brdrLcn) =>
+		brdrLcn !== 'none' ? 'launcher withBorder' : 'launcher',
+	);
 
 	const Favorites = () => (
 		<revealer hexpand halign={Gtk.Align.FILL} reveal_child={bind(revealChild)}>
@@ -67,8 +71,8 @@ export default (): JSX.Element => {
 	/>
 
 	return (
-		<PopupWindow layout="top" marginTop={100} name="launcher">
-			<box vertical className="launcher">
+		<PopupWindow layout="top" name="launcher">
+			<box vertical className={computeClassName}>
 				<Entry />
 				<Favorites />
 				{Applauncher}

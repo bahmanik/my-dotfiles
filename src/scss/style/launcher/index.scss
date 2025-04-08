@@ -1,29 +1,47 @@
-.launcher {
+#launcher {
     * {
         font-size: $font-size * $launcher-scaling * 0.01;
     }
 
-    background-color: rgba(0, 0, 0, 0.4);
-    @include floating_widget;
+    .launcher {
+        @include floating_widget;
+        margin-top: if($bar-floating, $bar-margin_top, 0em);
+        margin: 100px;
+
+        &.withBorder {
+            border-top: if($launcher-border_location =='top' or $launcher-border_location =='horizontal' or $launcher-border_location =='full',
+                    $launcher-border_width solid,
+                    none);
+            border-bottom: if($launcher-border_location =='bottom' or $launcher-border_location =='horizontal' or $launcher-border_location =='full',
+                    $launcher-border_width solid,
+                    none);
+            border-left: if($launcher-border_location =='left' or $launcher-border_location =='vertical' or $launcher-border_location =='full',
+                    $launcher-border_width solid,
+                    none);
+            border-right: if($launcher-border_location =='right' or $launcher-border_location =='vertical' or $launcher-border_location =='full',
+                    $launcher-border_width solid,
+                    none);
+            border-color: $launcher-border_color;
+        }
+
+        @if $launcher-shadow {
+            box-shadow: 0px 1px 4px 0px red;
+        }
+    }
 
     .appIcon {
         font-size: $launcher-icon;
     }
 
-    separator {
-        &.horizontal {
-            background-color: red;
-
-            min-height: 10px;
-        }
-
-        &.vertical {
-            background-color: red;
-            min-width: 10px;
-        }
-    }
-
     .favoritesIcon {
         font-size: $launcher-favorites;
     }
+
+    separator {
+        background-color: blue;
+        margin: $launcher-spacing 0;
+        min-height: 10px;
+    }
+
+    background-color: rgba(0, 0, 0, $launcher-bg_opacity);
 }
