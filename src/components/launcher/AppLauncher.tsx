@@ -34,7 +34,6 @@ export default function AppLauncher() {
             vertical
             valign={Gtk.Align.CENTER}
         >
-            <Separator />
             <Title />
             <Description />
         </box>
@@ -45,9 +44,12 @@ export default function AppLauncher() {
                 onClicked={() => {
                     App.get_window("launcher")!.hide(); app.launch()
                 }}>
-                <box>
-                    <TextBox />
-                    <AppIcon />
+                <box vertical>
+                    <Separator />
+                    <box>
+                        <AppIcon />
+                        <TextBox />
+                    </box>
                 </box>
             </button>
         </revealer>

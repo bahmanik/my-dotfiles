@@ -95,24 +95,33 @@ const options = mkOptions({
         launcher: {
             scaling: opt(100),
             bg_opacity: opt(0.4),
-            border_color: opt("red"),
-            border_width: opt("0.2em"),
             border: {
                 location: opt<BorderLocation>('none'),
                 width: opt('0.15em'),
                 color: opt(colors.lavender),
             },
-
-            shadow: opt(true),
+            shadow: {
+                enable: opt(true),
+                width: opt('0.15em'),
+                color: opt(colors.lavender),
+            },
             //background: opt(tertiary_colors.mantle),
             //opacity: opt(100),
             icon: opt('2.5em'),
             favorites: opt('3.0em'),
-            spacing: opt("0.6em"),
+            spacing: opt("1.6em"),
             favorite: {
                 shadow: opt(true),
-                border: opt(true),
-                border_color: opt(colors.lavender)
+                border: {
+                    enable: opt(true),
+                    width: opt('0.15em'),
+                    color: opt(colors.lavender),
+                },
+            },
+            separator: {
+                enable: opt(true),
+                width: opt('5px'),
+                color: opt(colors.lavender),
             }
         },
         tooltip: {

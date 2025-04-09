@@ -1,4 +1,6 @@
 #launcher {
+    background-color: rgba(0, 0, 0, $launcher-bg_opacity);
+
     * {
         font-size: $font-size * $launcher-scaling * 0.01;
     }
@@ -24,8 +26,8 @@
             border-color: $launcher-border_color;
         }
 
-        @if $launcher-shadow {
-            box-shadow: 0px 1px 4px 0px red;
+        @if $launcher-shadow-enable {
+            box-shadow: 0px 1px 4px 0px $launcher-shadow-color;
         }
     }
 
@@ -38,10 +40,8 @@
     }
 
     separator {
-        background-color: blue;
+        background-color: $launcher-separator-color;
         margin: $launcher-spacing 0;
-        min-height: 10px;
+        min-height: $launcher-separator-width;
     }
-
-    background-color: rgba(0, 0, 0, $launcher-bg_opacity);
 }
