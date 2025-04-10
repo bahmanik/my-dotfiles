@@ -107,6 +107,9 @@ const options = mkOptions({
             },
             //background: opt(tertiary_colors.mantle),
             //opacity: opt(100),
+            pattern: {
+                enable: opt(false),
+            },
             icon: opt('2.5em'),
             favorites: opt('3.0em'),
             spacing: opt("1.6em"),
