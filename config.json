@@ -381,7 +381,7 @@
   "theme.bar.buttons.modules.microphone.background": "#24273a",
   "theme.bar.buttons.modules.microphone.icon": "#24273a",
   "theme.bar.buttons.modules.microphone.icon_background": "#a6da95",
-  "wallpaper.image": "/home/ali/.config/background",
+  "wallpaper.image": "/home/ali/.config/ags/Theme/cyberpunk/background",
   "theme.matugen_settings.mode": "dark",
   "wallpaper.enable": true,
   "theme.matugen_settings.variation": "standard_1",

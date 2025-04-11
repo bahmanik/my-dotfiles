@@ -93,6 +93,7 @@ const tertiary_colors = {
 const options = mkOptions({
     theme: {
         launcher: {
+            margin_top: opt("100px"),
             scaling: opt(100),
             bg_opacity: opt(0.4),
             border: {

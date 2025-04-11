@@ -7,8 +7,7 @@
 
     .launcher {
         @include floating_widget;
-        margin-top: if($bar-floating, $bar-margin_top, 0em);
-        margin: 100px;
+        margin-top: $launcher-margin_top;
 
         &.withBorder {
             border-top: if($launcher-border_location =='top' or $launcher-border_location =='horizontal' or $launcher-border_location =='full',
